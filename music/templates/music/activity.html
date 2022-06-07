@@ -4,6 +4,14 @@
 <html lang="en">
     <head>
         {% include 'music/header.html' %}
+        <!-- This imports magenta.js on the page -->
+        <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.18.1"></script>
+        <script src='{% static "js/magenta.js"%}'></script>
+        <style>
+            body {
+              background-color: #EEE;
+            }
+        </style>
     </head>
     
     <body>
@@ -29,7 +37,9 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        
+                        <div class="controls">
+                            <button onclick="playRNN(event)">Play</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,6 +49,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src='{%static "js/scripts.js"%}'></script>
     </body>
 </html>
